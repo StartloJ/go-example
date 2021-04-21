@@ -22,5 +22,4 @@ def checkoutCode(Map args=[:]){
 node(){
     checkoutCode()
     echo "Hello"
-    githubNotify account: 'start-lab', context: 'Some test', credentialsId: 'github-jenkinsci-userpass-start', description: 'This is an example', status: 'SUCCESS', targetUrl: 'https://dtac.ap.ngrok.io'
 }
