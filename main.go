@@ -9,5 +9,5 @@ import (
 func main() {
 	app := fiber.New()
 	user.UserRoute(app)
-	app.Listen(":3000")
+	app.Listen(":8000")
 }
