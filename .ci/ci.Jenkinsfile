@@ -22,5 +22,5 @@ def checkoutCode(Map args=[:]){
 node(){
     checkoutCode()
     echo "Hello"
-    currentBuild.result = 'FAILURE'
+    currentBuild.result = 'SUCCESS'
 }
