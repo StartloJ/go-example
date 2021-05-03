@@ -21,6 +21,7 @@ def checkoutCode(Map args=[:]){
 
 node(){
     checkoutCode()
+    sleep(time:20,unit:"SECONDS")
     echo "Hello"
     currentBuild.result = 'SUCCESS'
 }
