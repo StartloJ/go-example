@@ -19,7 +19,11 @@ def checkoutCode(Map args=[:]){
   }
 }
 
-node(){
+throttle(['android']){
+  node(){
     checkoutCode()
+    sleep(time:100,unit:"SECONDS")
     echo "Hello"
+    currentBuild.result = 'SUCCESS'
+  }
 }
