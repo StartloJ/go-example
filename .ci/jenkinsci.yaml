@@ -1,0 +1,20 @@
+---
+appName: 'th.co.crie.tron2.android'
+fbAppBundle: 'com.facebook.katana'
+fbApkPath: '/Users/mobileapp/robot_app/com.facebook.katana_316.0.0.54.116.apk'
+envName: getEnvName()
+fastlaneBuildEnv: "beta" // build with production release
+fastlaneTestKey: 'test'
+androidInstallScript: "${WORKSPACE}/.jenkinsci/installapk.sh"
+androidCleanScript: "${WORKSPACE}/.jenkinsci/cleanapk.sh"
+appiumSimPort: '4724'
+testDeviceName: 'Nexus_5X'
+testAndroidApiVersions: ['28','29','30']
+robotRepo: 'https://github.com/RAGOpoR/AndroiddtacappAutomateTest.git'
+robotRepoCred: 'github-dtacautomate-userpass-start'
+robotBasePath: 'robot'
+robotFilePath: "${WORKSPACE}/robot/testcase/Login-Farm.robot"
+robotRepoBranch: 'develop'
+robotWrapperEnv: 'robotAppium'
+robotTestType: ['Postpaid','Prepaid']
+robotTestScenarioPrefix: 'Farm'
