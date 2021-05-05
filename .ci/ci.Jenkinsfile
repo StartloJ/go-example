@@ -19,9 +19,13 @@ def checkoutCode(Map args=[:]){
   }
 }
 
-node(){
+def preparedVars
+
+throttle(['android']){
+  node(){
     checkoutCode()
-    sleep(time:20,unit:"SECONDS")
+    sleep(time:300,unit:"SECONDS")
     echo "Hello"
     currentBuild.result = 'SUCCESS'
+  }
 }
