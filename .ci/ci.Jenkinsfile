@@ -21,7 +21,7 @@ def checkoutCode(Map args=[:]){
 
 def preparedVars
 
-throttle(['android']){
+throttle(['ios']){
   node(){
     checkoutCode()
     sleep(time:300,unit:"SECONDS")
