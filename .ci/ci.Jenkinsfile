@@ -26,6 +26,6 @@ throttle(['android']){
     checkoutCode()
     sleep(time:300,unit:"SECONDS")
     echo "Hello"
-    currentBuild.result = 'SUCCESS'
+    currentBuild.result = 'FAILURE'
   }
 }
