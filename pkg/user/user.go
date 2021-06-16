@@ -34,6 +34,14 @@ func init() {
 	})
 }
 
+// Functions for healthcheck data in vars `users`
+func CheckDataUsers(c *fiber.Ctx) error {
+	if len(users) < 1 {
+		return c.SendStatus(503)
+	}
+	return c.SendStatus(200)
+}
+
 func GetUserWithId(c *fiber.Ctx) error {
 	i, err := strconv.Atoi(c.Params("id"))
 	log.Println(len(users))
@@ -74,4 +82,5 @@ func AddNewUserToDb(c *fiber.Ctx) error {
 func UserRoute(router *fiber.App) {
 	router.Get("/user/:id", GetUserWithId)
 	router.Post("/user", AddNewUserToDb)
+	router.Get("/healthz", CheckDataUsers)
 }
