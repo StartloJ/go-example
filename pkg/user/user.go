@@ -78,9 +78,33 @@ func AddNewUserToDb(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusCreated).JSON(users)
 }
 
+func RemoveWithIndex(index int) []User {
+	return append(users[:index], users[index+1:]...)
+}
+
+func DeleteExistedUser(c *fiber.Ctx) error {
+	i, err := strconv.Atoi(c.Params("id"))
+	log.Println(len(users))
+	if i < 0 || i >= len(users) {
+		return c.SendStatus(400)
+	}
+	if err != nil {
+		c.SendStatus(400)
+		return c.SendString(err.Error())
+	}
+	del, err := json.Marshal(users[i])
+	if err != nil {
+		c.SendStatus(400)
+		return c.SendString(err.Error())
+	}
+	users = RemoveWithIndex(i)
+	return c.Status(fiber.StatusAccepted).JSON(del)
+}
+
 // UserRoute Pepopopopop
 func UserRoute(router *fiber.App) {
 	router.Get("/user/:id", GetUserWithId)
 	router.Post("/user", AddNewUserToDb)
+	router.Delete("/user/:id", DeleteExistedUser)
 	router.Get("/healthz", CheckDataUsers)
 }
