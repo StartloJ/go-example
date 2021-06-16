@@ -12,7 +12,7 @@ spec:
         app: "demo-app"
     spec:
       containers:
-      - image: dukecyber/go-example
+      - image: dukecyber/demo-golang:demo-1.0.0
         imagePullPolicy: Always
         name: "demo"
         ports:
