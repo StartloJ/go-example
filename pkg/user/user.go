@@ -18,19 +18,19 @@ var users []User
 
 func init() {
 	users = append(users, User{
-		Name:  "PePo",
-		Email: "pepo@pepo.pepo",
-		Age:   23,
+		Name:  "Kitty",
+		Email: "kitty@hello.white",
+		Age:   8,
 	})
 	users = append(users, User{
-		Name:  "PePo V2",
-		Email: "pepo@pepo.pepo",
-		Age:   23,
+		Name:  "Badtz",
+		Email: "badtz@hello.white",
+		Age:   8,
 	})
 	users = append(users, User{
-		Name:  "PePo V3",
-		Email: "pepo@pepo.pepo",
-		Age:   23,
+		Name:  "Kuromi",
+		Email: "kuromi@hello.white",
+		Age:   8,
 	})
 }
 
